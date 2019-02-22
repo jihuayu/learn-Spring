@@ -3,8 +3,6 @@ package com.example.demo.controller;
 
 import com.example.demo.service.UserService;
 import com.example.demo.user.User;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -17,7 +15,6 @@ public class UserController {
 
     @RequestMapping(value="/{name}" ,method= RequestMethod.GET)
     public User toIndex(@PathVariable String name){
-//        return name;
         System.out.println(name);
         System.out.println(11111);
         User user = this.userService.getUserById(name);
@@ -32,9 +29,5 @@ public class UserController {
             return  "ok";
         }
         return  "bad";
-//        System.out.println(userId);
-//        System.out.println(11111);
-//        User user = this.userService.getUserById(userId);
-//        return user;
     }
 }
