@@ -15,10 +15,7 @@ public class UserController {
 
     @RequestMapping(value="/{name}" ,method= RequestMethod.GET)
     public User toIndex(@PathVariable String name){
-        System.out.println(name);
-        System.out.println(11111);
-        User user = this.userService.getUserById(name);
-        return user;
+        return this.userService.getUserById(name);
     }
     @RequestMapping(value="/" ,method= RequestMethod.POST)
     public String to1Index(HttpServletRequest request){
@@ -29,5 +26,9 @@ public class UserController {
             return  "ok";
         }
         return  "bad";
+    }
+    @RequestMapping(value="/" ,method= RequestMethod.GET)
+    public String get1(){
+        return  "hello world";
     }
 }
